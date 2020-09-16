@@ -1,0 +1,110 @@
+/* Hoja de estilos para la Tienda */
+
+* {
+    box-sizing: border-box;
+  }
+
+  /* Con esto nos ahorramos crear una transicion en los enlaces, ya que suaviza los scrolls */
+  html{
+    scroll-behavior: smooth;
+  }
+  
+  /* Estilos del body */
+  body {
+    background-color: rgba(255, 255, 255, 0.3);
+    font-family: Arial;
+    margin: 0;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:1;
+  }
+  
+  /* Estilos de cabecera */
+  header {
+    position: fixed;
+    padding-top: 60px;
+    width:100%;
+    text-align: center;
+    background: orangered;
+    color: white;
+    z-index:10;
+  }
+  
+  /* Estilos de la barra de navegación */
+  nav {
+    display: flex;
+    width:100%;
+    background-color: #333;
+    padding-bottom: 0;
+  }
+  
+  /* Estilos de los links de la navbar */
+  nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  /* Efecto hover en los links de la navbar */
+  nav a:hover {
+    background-color: #ddd;
+    color: black;
+    font-weight: bold;
+  }
+
+  /* Para añadir contenido al hacer hover en los enlaces del menú */
+  nav a:hover:before{
+    content:"</";
+  }
+
+  nav a:hover:after{
+    content:">";
+  }
+  
+  /* main */
+  main {  
+    margin-top:106px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    min-height: 48vw;
+  }
+
+  /* Estilos del aside */
+  aside {
+    flex: 30%;
+    background-color: grey;
+    padding: 20px;
+  }
+  
+  /* Estilos del article */
+  article {
+    flex: 30%;
+    background-color: cyan;
+    padding: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    width:100%;
+  }
+  
+  /* Responsive layout - a menos de 700px */
+  @media screen and (max-width: 700px) {
+    /* Reajustamos en columna el main y el nav */
+    main, nav {   
+      flex-direction: column;
+      
+    }
+
+    main{
+        margin-top: 244px;
+        width: 100%;
+    }
+  }

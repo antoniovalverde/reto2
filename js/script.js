@@ -1,0 +1,1 @@
+/* Funcionalidades para la Tienda */
