@@ -24,7 +24,7 @@
         <main>
             <aside>
                 <div class="producto">
-                    <img draggable="true" ondragstart="start(event)" ondragend="end(event)" src="img/hamburguesa.png" alt="hamburguesa">
+                    <img draggable="true" id="comida1" data-nom="Hamburguesa" data-pre="5.00" ondragstart="comienzoArrastre(event)" ondrag="arrastrando(event)" src="img/hamburguesa.png" alt="hamburguesa">
                     <span class="">Hamburguesa</span>
                     <span class="">5,00 €</span>
                 </div>
@@ -55,12 +55,15 @@
                 </div>
             </aside>
             <article>
-                <div class="carro" ondrop="return drop(event)">
+                <div class="carro" ondragover="permitirSoltar(event)" ondrop="alSoltar(this, event)">
                     <img src="img/carrito.png" alt="carrito">
                 </div>
             </article>
             <aside>
-                
+                <h3>Lista de la compra</h3>
+                <br><br>
+                <ul id="listaCompra">
+                </ul>
             </aside>
         </main>
   

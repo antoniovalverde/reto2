@@ -126,6 +126,7 @@
   .producto > img{
     width: 100px;
     height:100px;
+    cursor: move;
   }
   
   /* Responsive layout - a menos de 700px */
