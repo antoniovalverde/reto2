@@ -21,6 +21,7 @@ function alSoltar(objetoContainer, event){
     var nombreArrastrado = event.dataTransfer.getData('nombreProducto');
     var precioArrastrado = event.dataTransfer.getData('precioProducto');
     //objetoContainer.innerHTML = document.getElementById(idArrastrado).outerHTML;
-    var laLista = document.getElementById('listaCompra');
-    laLista.innerHTML += '<li>' + nombreArrastrado + '------' + precioArrastrado + ' €</li>';
+    var laLista = document.getElementById('totales');
+    var linea = '<tr><td>' + nombreArrastrado + '</td><td>' + precioArrastrado + '</td></tr>';
+    laLista.innerHTML += linea;
 }
