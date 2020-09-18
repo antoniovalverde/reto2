@@ -146,18 +146,28 @@
     align-items: center;
     width:100%;
     height:60%;
+    overflow: auto;
+    background: white;
+    border-radius: 5px;
   }
 
   .linea{
     display:flex;
     width: 100%;
     justify-content: space-between;
+    font-family: Brush Script MT,cursive; 
+    font-size: 15pt;
+    color: brown;
   }
 
   #totales{
+    margin-top: 20px;
     display:flex;
     width: 100%;
     justify-content: space-between;
+    font-family: Brush Script MT,cursive; 
+    font-size: 20pt;
+    font-weight: bold;
   }
   
   /* Responsive layout - a menos de 700px */

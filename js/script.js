@@ -1,5 +1,6 @@
 /* Funcionalidades para la Tienda */
 
+let contador = 0;
 
 function comienzoArrastre(event){
     event.dataTransfer.setData('id_arrastrado', event.target.id);
@@ -17,11 +18,20 @@ function permitirSoltar(event){
 }
 
 function alSoltar(objetoContainer, event){
-    var idArrastrado = event.dataTransfer.getData('id_arrastrado'); 
-    var nombreArrastrado = event.dataTransfer.getData('nombreProducto');
-    var precioArrastrado = event.dataTransfer.getData('precioProducto');
-    //objetoContainer.innerHTML = document.getElementById(idArrastrado).outerHTML;
-    var laLista = document.getElementById('totales');
-    var linea = '<tr><td>' + nombreArrastrado + '</td><td>' + precioArrastrado + '</td></tr>';
+    let nombreArrastrado = event.dataTransfer.getData('nombreProducto');
+    let precioArrastrado = event.dataTransfer.getData('precioProducto');
+    let laLista = document.getElementById('listaCompra');
+    let money = document.getElementById("money");
+    let total = money.innerHTML;
+    total = parseFloat(total);
+
+    let linea = '<div class="linea"><span class="articulo">X<span class="nombre"> ' + nombreArrastrado + '</span></span>';
+    linea += '<span class="precioTotal"><span id="prto">' + precioArrastrado + '</span> €</span></div>';
+
     laLista.innerHTML += linea;
+
+    precioArrastrado = parseFloat(precioArrastrado);
+    total = total + precioArrastrado;
+
+    money.innerHTML = total.toFixed(2);
 }
