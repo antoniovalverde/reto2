@@ -1,5 +1,6 @@
 /* Funcionalidades para la Tienda */
 
+//Contador que se incrementará cada vez que soltemos un objeto en la lista de la compra para añadir al id de línea y que no haya ids iguales
 let contador = 0;
 
 function comienzoArrastre(event){
@@ -25,19 +26,54 @@ function alSoltar(objetoContainer, event){
     let total = money.innerHTML;
     total = parseFloat(total);
 
-    let eli = "lin" + contador;
+    //Esta variable vale 0 si el artículo aún no se ha añadido previamente
+    let existe = 0;
 
-    let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}">X</span><span class="nombre"> ${nombreArrastrado}</span></span>`;
-    linea += '<span class="precioTotal"><span id="prto' + contador + '" class="prto">' + precioArrastrado + '</span> €</span></div>';
+    //Aquí comprobamos la existencia previa o no de un artículo en la lista para actuar en consecuencia
+    let lineas = document.getElementsByClassName("nombre");
+    for(let i=0;i<lineas.length;i++){
 
-    laLista.innerHTML += linea;
+        let nombre = lineas[i].innerHTML;
+        nombre = nombre.trim();
 
-    precioArrastrado = parseFloat(precioArrastrado);
-    total = total + precioArrastrado;
+        if(nombreArrastrado == nombre){
+            existe = 1;
+        }
+    }
 
-    money.innerHTML = total.toFixed(2);
+    if(existe == 1){
+        //Incrementamos el multiplicador de línea de producto
+        let multiplicador = document.getElementById("mul-" + nombreArrastrado).innerHTML;
+        multiplicador = multiplicador.substring(1);
+        multiplicador = +multiplicador;
+        multiplicador++;
+        let nuevoMulti = document.getElementById("mul-" + nombreArrastrado);
+        nuevoMulti.innerHTML = `x${multiplicador}`;
 
-    contador++;
+        //Incrementamos en total general
+        precioArrastrado = parseFloat(precioArrastrado);
+        total = total + precioArrastrado;
+    
+        money.innerHTML = total.toFixed(2);
+
+
+    }else{
+        let eli = "lin" + contador;
+
+        let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}">X</span><span class="nombre"> ${nombreArrastrado}</span></span>`;
+        linea += `<span id="mul-${nombreArrastrado}" name="lin${contador}">x1</span><span class="precioTotal"><span id="prto${contador}" class="prto">${precioArrastrado}</span> €</span></div>`;
+    
+        laLista.innerHTML += linea;
+    
+        precioArrastrado = parseFloat(precioArrastrado);
+        total = total + precioArrastrado;
+    
+        money.innerHTML = total.toFixed(2);
+    
+        contador++;
+    }
+
+
 }
 
 function eliminar(id_linea){
@@ -60,7 +96,11 @@ function eliminar(id_linea){
     prec = parseFloat(prec);
     prec = prec.toFixed(2);
 
-    total = total - prec;
+    let multiplicador = document.getElementsByName(id_linea)[0].innerHTML;
+    multiplicador = multiplicador.substring(1);
+    multiplicador = +multiplicador;
+
+    total = total - (prec * multiplicador);
     total = total.toFixed(2);
 
     money.innerHTML = total;

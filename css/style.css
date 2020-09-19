@@ -132,7 +132,15 @@
   .producto > img{
     width: 100px;
     height:100px;
-    cursor: move;
+    cursor: grab;
+  }
+
+  .producto > img:active{
+    cursor: grabbing;
+  }
+
+  .halo {
+    border: solid 5px #ccc;
   }
 
   #cuenta{
@@ -174,6 +182,10 @@
     font-family: Brush Script MT,cursive; 
     font-size: 20pt;
     font-weight: bold;
+  }
+
+  .borrar{
+    cursor:default;
   }
   
   /* Responsive layout - a menos de 700px */
