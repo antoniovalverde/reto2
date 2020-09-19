@@ -76,14 +76,12 @@
   /* Estilos del aside */
   aside {
     flex: 30%;
-    /*background-color: grey;*/
     padding: 20px;
   }
   
   /* Estilos del article */
   article {
     flex: 30%;
-    background-color: cyan;
     padding: 20px;
   }
   
@@ -111,6 +109,11 @@
   .carro > img{
     width: 500px;
     height: 500px;
+  }
+
+  .arrastrar{
+    font-size: 30pt;
+    text-align: center;
   }
 
   .producto{
@@ -200,4 +203,5 @@
         margin-top: 244px;
         width: 100%;
     }
+
   }
