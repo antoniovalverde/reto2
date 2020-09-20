@@ -79,12 +79,6 @@
     padding: 20px;
   }
   
-  /* Estilos del article */
-  article {
-    flex: 30%;
-    padding: 20px;
-  }
-  
   /* Footer */
   footer {
     padding: 20px;
@@ -99,12 +93,19 @@
     flex-wrap: wrap;
   }
 
+    /* Estilos del article */
   article{
     display: flex;
+    flex: 30%;
+    padding: 20px;
     width: 30%;
-    justify-content: center;
   }
 
+  .carro{
+    display:flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+  }
 
   .carro > img{
     width: 500px;
@@ -191,8 +192,26 @@
     cursor:default;
   }
   
+  /* Responsive layout - a menos de 1500px */
+  @media screen and (max-width: 1500px) {
+  
+    #cuenta{
+      padding:10px 10px;
+    }
+
+    .arrastras{
+      font-size: 20pt;
+    }
+
+    .carro > img{
+      width:250px;
+      height:250px;
+    }
+  
+  }
+
   /* Responsive layout - a menos de 700px */
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 825px) {
     /* Reajustamos en columna el main y el nav */
     main, nav {   
       flex-direction: column;
@@ -202,6 +221,40 @@
     main{
         margin-top: 244px;
         width: 100%;
+    }
+
+    aside{
+      width:100%;
+    }
+
+    article{
+      display:none;
+    }
+
+    #tituloLista{
+      font-size: 14pt;
+    }
+
+    .linea{
+      font-size: 10pt;
+    }
+
+    #totales{
+      font-size: 12pt;
+    }
+
+    .producto{
+      width: 100px;
+      height: 100px;
+    }
+
+    .producto > img{
+      width: 50px;
+      height: 50px;
+    }
+
+    .producto > span{
+      font-size: 10pt;
     }
 
   }
