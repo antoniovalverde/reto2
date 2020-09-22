@@ -105,6 +105,11 @@
     width: 30%;
   }
 
+  .borrar > img {
+    height: 15pt;
+    width: 15pt;
+  }
+
   .carro{
     display:flex;
     flex-direction: column;

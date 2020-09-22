@@ -60,7 +60,7 @@ function alSoltar(objetoContainer, event){
     }else{
         let eli = "lin" + contador;
 
-        let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}">X</span><span class="nombre"> ${nombreArrastrado}</span></span>`;
+        let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}"><img src="img/borrar.png" alt="borrado"></span><span class="nombre"> ${nombreArrastrado}</span></span>`;
         linea += `<span id="mul-${nombreArrastrado}" name="lin${contador}">x1</span><span class="precioTotal"><span id="prto${contador}" class="prto">${precioArrastrado}</span> €</span></div>`;
     
         laLista.innerHTML += linea;
@@ -163,7 +163,7 @@ if( navigator.userAgent.match(/Android/i)
             }else{
                 let eli = "lin" + contador;
         
-                let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}">X</span><span class="nombre"> ${nombreProducto}</span></span>`;
+                let linea = `<div id="lin${contador}" class="linea"><span class="articulo"><span class="borrar" onclick="eliminar('${eli}')" data-pos="${eli}"><img src="img/borrar.png" alt="borrado"></span><span class="nombre"> ${nombreProducto}</span></span>`;
                 linea += `<span id="mul-${nombreProducto}" name="lin${contador}">x1</span><span class="precioTotal"><span id="prto${contador}" class="prto">${precioProducto}</span> €</span></div>`;
             
                 laLista.innerHTML += linea;
