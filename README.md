@@ -1,7 +1,7 @@
 # BURRIKING
 
 <p align="center">
-  <img src="/img/preview.jpg" width="300" alt="preview">
+  <img src="/img/preview.jpg" width="600" alt="preview">
 </p>
 
 Carrito de la compra con uso de Drag&Drop y cálculo de la cuenta. Es responsive y al utilizarse en móviles o tablets, donde se desactiva el drag&drop nativo del navegador, cambia la forma de uso (haciendo click en los productos para añadirlos).
