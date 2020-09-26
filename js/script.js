@@ -115,7 +115,8 @@ if( navigator.userAgent.match(/Android/i)
 || navigator.userAgent.match(/iPad/i)
 || navigator.userAgent.match(/iPod/i)
 || navigator.userAgent.match(/BlackBerry/i)
-|| navigator.userAgent.match(/Windows Phone/i)) {
+|| navigator.userAgent.match(/Windows Phone/i)
+|| screen.width < 825) {
 
     // estamos desde un movil o tablet
     let productos = document.getElementsByClassName('prod-img');
